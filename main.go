@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"golangweb/handler"
 	"log"
 	"net/http"
@@ -15,6 +16,7 @@ func main() {
 
 	err := http.ListenAndServe(":", mux)
 	if err != nil {
+		fmt.Println(err)
 		panic(err)
 	}
 
