@@ -13,7 +13,7 @@ func main() {
 
 	log.Println("Starting Port 8080")
 
-	err := http.ListenAndServe(":8080", mux)
+	err := http.ListenAndServe(":", mux)
 	log.Fatal(err)
 
 }
