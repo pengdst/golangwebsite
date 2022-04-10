@@ -15,7 +15,7 @@ func main() {
 
 	err := http.ListenAndServe(":", mux)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 }

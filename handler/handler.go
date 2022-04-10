@@ -17,7 +17,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	tmpl, err := template.ParseFiles(path.Join("views", "index.html"), path.Join("views", "header.html"), path.Join("views", "footer.html"), path.Join("views", "navbar.html"), path.Join("views", "section1.html"), path.Join("views", "section2.html"), path.Join("views", "services.html"), path.Join("views", "cinema1.html"), path.Join("views", "cinema2.html"), path.Join("views", "cinema3.html"), path.Join("views", "contact.html"), path.Join("views", "banner.html"))
 	if err != nil {
-		log.Println(err)
+		panic(err)
 		http.Error(w, "oopsss.... error pages", http.StatusInternalServerError)
 		return
 	}
@@ -60,7 +60,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	err = tmpl.Execute(w, data)
 	if err != nil {
-		log.Println(err)
+		panic(err)
 		http.Error(w, "oopsss.... error pages", http.StatusInternalServerError)
 		return
 	}
